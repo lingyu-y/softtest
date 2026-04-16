@@ -1,0 +1,8 @@
+org\apache\commons\statistics\ranking\NaturalRanking$1.class
+org\apache\commons\statistics\ranking\NaturalRanking$IntList.class
+com\example\App.class
+org\apache\commons\statistics\descriptive\Mean.class
+org\apache\commons\statistics\ranking\NaturalRanking.class
+com\example\demo\NaturalRankingTest.class
+com\example\demo\TestMean.class
+org\apache\commons\statistics\ranking\NaturalRanking$DataPosition.class

@@ -1,0 +1,17 @@
+-------------------------------------------------------------------------------
+Test set: com.example.demo.NaturalRankingJUnitTest
+-------------------------------------------------------------------------------
+Tests run: 6, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 0.024 s <<< FAILURE! -- in com.example.demo.NaturalRankingJUnitTest
+com.example.demo.NaturalRankingJUnitTest.testAverageTiesWithDuplicates -- Time elapsed: 0.008 s <<< FAILURE!
+org.opentest4j.AssertionFailedError: AVERAGE 策略下，重复值应得到平均排名 ==> array contents differ at index [1], expected: <2.5> but was: <2.0>
+	at org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:151)
+	at org.junit.jupiter.api.AssertionFailureBuilder.buildAndThrow(AssertionFailureBuilder.java:132)
+	at org.junit.jupiter.api.AssertArrayEquals.failArraysNotEqual(AssertArrayEquals.java:440)
+	at org.junit.jupiter.api.AssertArrayEquals.assertArrayEquals(AssertArrayEquals.java:306)
+	at org.junit.jupiter.api.AssertArrayEquals.assertArrayEquals(AssertArrayEquals.java:135)
+	at org.junit.jupiter.api.Assertions.assertArrayEquals(Assertions.java:1403)
+	at com.example.demo.NaturalRankingJUnitTest.testAverageTiesWithDuplicates(NaturalRankingJUnitTest.java:23)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+
