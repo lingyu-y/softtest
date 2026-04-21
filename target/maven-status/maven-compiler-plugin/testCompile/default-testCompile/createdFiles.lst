@@ -1,1 +1,3 @@
 com\example\AppTest.class
+com\example\demo\NaturalRankingJUnitTest.class
+com\example\demo\NaturalRankingTestSuite.class

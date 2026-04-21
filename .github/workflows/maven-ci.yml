@@ -19,19 +19,19 @@ jobs:
       with:
         java-version: '17'
         distribution: 'temurin'
-        cache: maven # 开启 Maven 依赖缓存，加快后续构建速度
+        cache: maven
 
     - name: Run Smoke Test (mvn test)
-      # 对应实验要求 3：执行测试任务
+      # 执行测试任务
       run: mvn clean test
 
     - name: Build with Maven (mvn package)
-      # 对应实验要求 2：构建完整 jar 包
+      # 构建完整 jar 包
       if: always()
       run: mvn package -DskipTests
 
     - name: Upload Artifact
-      # 实验要求 2：保存导出的 jar 包
+      # 保存导出的 jar 包
       if: always()
       uses: actions/upload-artifact@v4
       with:
