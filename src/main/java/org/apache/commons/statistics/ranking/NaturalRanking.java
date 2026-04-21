@@ -402,17 +402,18 @@ public class NaturalRanking implements RankingAlgorithm {
         // Exhaustive switch
         switch (tiesStrategy) {
         case  AVERAGE:   // Replace ranks with average: (lower + upper) / 2
-            // ========== 注入缺陷开始 ==========
-            // 原本应无条件执行 fill(ranks, tiesTrace, (2 * c + length - 1) * 0.5);
-            // 现在错误地：当并列元素个数 >= 2 时，使用最小值策略（不修改排名，即保留最小值 c）
-            // 只有当 length == 1 时才计算平均值（实际上 length 至少为 2 才会进入此分支，所以此处逻辑是故意的）
-            if (length >= 2) {
-                // 故意错误：什么也不做，保留最小值 c，即采用了 MINIMUM 策略的行为
-                // 因为 MINIMUM 分支是空的，这里直接留空即可
-            } else {
-                fill(ranks, tiesTrace, (2 * c + length - 1) * 0.5);
-            }
-            // ========== 注入缺陷结束 ==========
+            // // ========== 注入缺陷开始 ==========
+            // // 原本应无条件执行 fill(ranks, tiesTrace, (2 * c + length - 1) * 0.5);
+            // // 现在错误地：当并列元素个数 >= 2 时，使用最小值策略（不修改排名，即保留最小值 c）
+            // // 只有当 length == 1 时才计算平均值（实际上 length 至少为 2 才会进入此分支，所以此处逻辑是故意的）
+            // if (length >= 2) {
+            //     // 故意错误：什么也不做，保留最小值 c，即采用了 MINIMUM 策略的行为
+            //     // 因为 MINIMUM 分支是空的，这里直接留空即可
+            // } else {
+            //     fill(ranks, tiesTrace, (2 * c + length - 1) * 0.5);
+            // }
+            // // ========== 注入缺陷结束 ==========
+            fill(ranks, tiesTrace, (2 * c + length - 1) * 0.5);
             break;
         case MAXIMUM:    // Replace ranks with maximum values
             fill(ranks, tiesTrace, c + length - 1);
